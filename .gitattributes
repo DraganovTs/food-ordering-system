@@ -1,0 +1,9 @@
+* text eol=lf 
+# Set to LF for all files
+* text=auto
+
+# Explicitly set CRLF for files that need it (e.g., Windows batch files)
+*.bat text eol=crlf
+
+# Specify files to be treated as binary (no line-ending conversions)
+*.png -text
