@@ -3,5 +3,5 @@ package com.food.ordering.system.order.service.domain.ports.output.repository.me
 import com.food.ordering.system.domain.event.publisher.DomainEventPublisher;
 import com.food.ordering.system.order.system.domain.event.OrderCreatedEvent;
 
-public interface OrderCreatedPayRqstMsgPub extends DomainEventPublisher<OrderCreatedEvent> {
+public interface OrderCreatedPaymentRequestMessagePublisher extends DomainEventPublisher<OrderCreatedEvent> {
 }

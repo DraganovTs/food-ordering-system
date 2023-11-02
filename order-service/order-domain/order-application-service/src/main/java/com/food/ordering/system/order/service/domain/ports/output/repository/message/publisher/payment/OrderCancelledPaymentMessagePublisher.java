@@ -3,5 +3,5 @@ package com.food.ordering.system.order.service.domain.ports.output.repository.me
 import com.food.ordering.system.domain.event.publisher.DomainEventPublisher;
 import com.food.ordering.system.order.system.domain.event.OrderCancelledEvent;
 
-public interface OrderCancelledPayMsgPub extends DomainEventPublisher<OrderCancelledEvent> {
+public interface OrderCancelledPaymentMessagePublisher extends DomainEventPublisher<OrderCancelledEvent> {
 }
