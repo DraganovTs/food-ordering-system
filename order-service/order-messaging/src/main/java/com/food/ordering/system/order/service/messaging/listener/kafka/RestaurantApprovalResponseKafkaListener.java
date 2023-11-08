@@ -1,6 +1,5 @@
 package com.food.ordering.system.order.service.messaging.listener.kafka;
 
-import com.food.ordering.system.domain.valueobject.OrderApprovedStatus;
 import com.food.ordering.system.kafka.consumer.KafkaConsumer;
 import com.food.ordering.system.kafka.order.avro.model.OrderApprovalStatus;
 import com.food.ordering.system.kafka.order.avro.model.RestaurantApprovalResponseAvroModel;
