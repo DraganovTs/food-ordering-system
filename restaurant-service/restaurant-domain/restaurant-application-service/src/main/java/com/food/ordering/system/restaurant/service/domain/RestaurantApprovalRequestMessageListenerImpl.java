@@ -12,7 +12,8 @@ public class RestaurantApprovalRequestMessageListenerImpl implements RestaurantA
 
     private final RestaurantApprovalRequestHelper restaurantApprovalRequestHelper;
 
-    public RestaurantApprovalRequestMessageListenerImpl(RestaurantApprovalRequestHelper restaurantApprovalRequestHelper) {
+    public RestaurantApprovalRequestMessageListenerImpl(RestaurantApprovalRequestHelper
+                                                                restaurantApprovalRequestHelper) {
         this.restaurantApprovalRequestHelper = restaurantApprovalRequestHelper;
     }
 
