@@ -1,0 +1,17 @@
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\RestaurantId.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\OrderApprovalStatus.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\Money.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\ProductId.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\BaseId.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\event\DomainEvent.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\PaymentStatus.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\exception\DomainException.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\OrderId.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\RestaurantOrderStatus.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\OrderStatus.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\DomainConstants.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\event\publisher\DomainEventPublisher.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\CustomerId.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\entity\AggregateRoot.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\valueobject\PaymentOrderStatus.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\common\common-domain\src\main\java\com\food\ordering\system\domain\entity\BaseEntity.java
