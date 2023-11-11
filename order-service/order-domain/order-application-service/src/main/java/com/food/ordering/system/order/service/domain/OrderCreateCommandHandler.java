@@ -3,7 +3,6 @@ package com.food.ordering.system.order.service.domain;
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderCommand;
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
 import com.food.ordering.system.order.service.domain.mapper.OrderDataMapper;
-import com.food.ordering.system.order.service.domain.ports.output.repository.message.publisher.payment.OrderCreatedPaymentRequestMessagePublisher;
 import com.food.ordering.system.order.system.domain.event.OrderCreatedEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
