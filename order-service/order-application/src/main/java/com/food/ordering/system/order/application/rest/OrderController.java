@@ -7,6 +7,7 @@ import com.food.ordering.system.order.service.domain.dto.track.TrackOrderRespons
 import com.food.ordering.system.order.service.domain.ports.input.service.OrderApplicationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -31,6 +32,7 @@ public class OrderController {
         return ResponseEntity.ok(createOrderResponse);
     }
 
+    @Transactional
     @GetMapping("/{trackingId}")
     public ResponseEntity<TrackOrderResponse> getOrderByTrackingId(@PathVariable UUID trackingId){
         TrackOrderResponse trackOrderResponse = orderApplicationService.trackOrder(TrackOrderQuery.builder().orderTrackingId(trackingId).build());
