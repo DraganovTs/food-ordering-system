@@ -1,17 +1,16 @@
 package com.food.ordering.system.order.service.domain.mapper;
 
-import com.food.ordering.system.domain.valueobject.CustomerId;
-import com.food.ordering.system.domain.valueobject.Money;
-import com.food.ordering.system.domain.valueobject.ProductId;
-import com.food.ordering.system.domain.valueobject.RestaurantId;
+import com.food.ordering.system.domain.valueobject.*;
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderCommand;
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
 import com.food.ordering.system.order.service.domain.dto.create.OrderAddress;
 import com.food.ordering.system.order.service.domain.dto.track.TrackOrderResponse;
+import com.food.ordering.system.order.service.domain.outbox.model.payment.OrderPaymentEventPayload;
 import com.food.ordering.system.order.system.domain.entity.Order;
 import com.food.ordering.system.order.system.domain.entity.OrderItem;
 import com.food.ordering.system.order.system.domain.entity.Product;
 import com.food.ordering.system.order.system.domain.entity.Restaurant;
+import com.food.ordering.system.order.system.domain.event.OrderCreatedEvent;
 import com.food.ordering.system.order.system.domain.valueobject.StreetAddress;
 import org.springframework.stereotype.Component;
 
@@ -41,7 +40,7 @@ public class OrderDataMapper {
                 .build();
     }
 
-    public CreateOrderResponse orderToCreateOrderResponse(Order order,String message) {
+    public CreateOrderResponse orderToCreateOrderResponse(Order order, String message) {
         return CreateOrderResponse.builder()
                 .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
@@ -49,7 +48,17 @@ public class OrderDataMapper {
                 .build();
     }
 
-    public TrackOrderResponse orderToTrackOrderResponse(Order order){
+    public OrderPaymentEventPayload orderCreatedEventToOrderPaymentEventPayload(OrderCreatedEvent orderCreatedEvent) {
+        return OrderPaymentEventPayload.builder()
+                .customerId(orderCreatedEvent.getOrder().getCustomerId().getValue().toString())
+                .orderId(orderCreatedEvent.getOrder().getId().getValue().toString())
+                .price(orderCreatedEvent.getOrder().getPrice().getAmount())
+                .createdAt(orderCreatedEvent.getCreatedAt())
+                .paymentOrderStatus(PaymentOrderStatus.PENDING.name())
+                .build();
+    }
+
+    public TrackOrderResponse orderToTrackOrderResponse(Order order) {
         return TrackOrderResponse.builder()
                 .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
