@@ -38,12 +38,14 @@ public class OrderCreateCommandHandler {
         CreateOrderResponse createOrderResponse =
                 orderDataMapper.orderToCreateOrderResponse(orderCreatedEvent.getOrder(),
                         "Order created successfully");
+
         paymentOutboxHelper.savePaymentOutboxMessage(orderDataMapper
                         .orderCreatedEventToOrderPaymentEventPayload(orderCreatedEvent),
                 orderCreatedEvent.getOrder().getOrderStatus(),
                 orderSagaHelper.orderStatusToSagaStatus(orderCreatedEvent.getOrder().getOrderStatus()),
                 OutboxStatus.STARTED,
                 UUID.randomUUID());
+
         log.info("Returning CreateOrderResponse with order id: {}", orderCreatedEvent.getOrder().getId());
 
         return createOrderResponse;
