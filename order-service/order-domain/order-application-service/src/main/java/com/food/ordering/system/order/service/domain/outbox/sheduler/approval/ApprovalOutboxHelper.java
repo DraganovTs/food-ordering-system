@@ -41,8 +41,8 @@ public class ApprovalOutboxHelper {
     }
 
     @Transactional(readOnly = true)
-    public Optional<OrderApprovalOutboxMessage> getApprovalOutboxMessageBySagaIdAndSagaStatus(UUID sagaId,
-                                                                                              SagaStatus... sagaStatus) {
+    public Optional<OrderApprovalOutboxMessage>
+    getApprovalOutboxMessageBySagaIdAndSagaStatus(UUID sagaId, SagaStatus... sagaStatus) {
         return approvalOutboxRepository.findByTypeAndSagaIdAndSagaStatus(ORDER_SAGA_NAME, sagaId, sagaStatus);
     }
 

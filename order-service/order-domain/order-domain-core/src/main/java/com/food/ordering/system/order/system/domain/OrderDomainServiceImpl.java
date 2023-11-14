@@ -1,6 +1,5 @@
 package com.food.ordering.system.order.system.domain;
 
-import com.food.ordering.system.domain.event.publisher.DomainEventPublisher;
 import com.food.ordering.system.order.system.domain.entity.Order;
 import com.food.ordering.system.order.system.domain.entity.Product;
 import com.food.ordering.system.order.system.domain.entity.Restaurant;
