@@ -19,7 +19,7 @@ import java.util.function.BiConsumer;
 public class OrderApprovalEventKafkaPublisher implements RestaurantApprovalRequestMessagePublisher {
 
     private final OrderMessagingDataMapper orderMessagingDataMapper;
-    private KafkaProducer<String, RestaurantApprovalRequestAvroModel> kafkaProducer;
+    private final KafkaProducer<String, RestaurantApprovalRequestAvroModel> kafkaProducer;
     private final OrderServiceConfigData orderServiceConfigData;
     private final KafkaMessageHelper kafkaMessageHelper;
 
@@ -40,7 +40,7 @@ public class OrderApprovalEventKafkaPublisher implements RestaurantApprovalReque
     public void publish(OrderApprovalOutboxMessage orderApprovalOutboxMessage,
                         BiConsumer<OrderApprovalOutboxMessage, OutboxStatus> outboxCallback) {
         OrderApprovalEventPayload orderApprovalEventPayload =
-                kafkaMessageHelper.getPaymentEventPayload(orderApprovalOutboxMessage.getPayload(),
+                kafkaMessageHelper.getOrderEventPayload(orderApprovalOutboxMessage.getPayload(),
                         OrderApprovalEventPayload.class);
 
         String sagaId = orderApprovalOutboxMessage.getSagaId().toString();

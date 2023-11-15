@@ -19,7 +19,7 @@ import java.util.function.BiConsumer;
 public class OrderPaymentEventKafkaPublisher implements PaymentRequestMessagePublisher {
 
     private final OrderMessagingDataMapper orderMessagingDataMapper;
-    private KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer;
+    private final KafkaProducer<String, PaymentRequestAvroModel> kafkaProducer;
     private final OrderServiceConfigData orderServiceConfigData;
     private final KafkaMessageHelper kafkaMessageHelper;
 
@@ -36,7 +36,7 @@ public class OrderPaymentEventKafkaPublisher implements PaymentRequestMessagePub
     @Override
     public void publish(OrderPaymentOutboxMessage orderPaymentOutboxMessage, BiConsumer<OrderPaymentOutboxMessage, OutboxStatus> outboxCallback) {
         OrderPaymentEventPayload orderPaymentEventPayload =
-                kafkaMessageHelper.getPaymentEventPayload(orderPaymentOutboxMessage.getPayload(),
+                kafkaMessageHelper.getOrderEventPayload(orderPaymentOutboxMessage.getPayload(),
                         OrderPaymentEventPayload.class);
 
         String sagaId = orderPaymentOutboxMessage.getSagaId().toString();

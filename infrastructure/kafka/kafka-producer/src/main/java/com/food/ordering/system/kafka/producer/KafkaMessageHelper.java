@@ -22,7 +22,7 @@ public class KafkaMessageHelper {
         this.objectMapper = objectMapper;
     }
 
-    public <T> T getPaymentEventPayload(String payload, Class<T> outputType) {
+    public <T> T getOrderEventPayload(String payload, Class<T> outputType) {
         try {
             return objectMapper.readValue(payload, outputType);
         } catch (JsonProcessingException e) {
@@ -31,11 +31,10 @@ public class KafkaMessageHelper {
         }
     }
 
-    public <T, U> ListenableFutureCallback<SendResult<String,
-            T>> getKafkaCallback(String responseTopicName, T avroModel, U outboxMessage,
-                                 BiConsumer<U, OutboxStatus> outboxCallback,
-                                 String orderId,
-                                 String avroModelName) {
+    public <T, U> ListenableFutureCallback<SendResult<String, T>>
+    getKafkaCallback(String responseTopicName, T avroModel, U outboxMessage,
+                     BiConsumer<U, OutboxStatus> outboxCallback,
+                     String orderId, String avroModelName) {
         return new ListenableFutureCallback<SendResult<String, T>>() {
             @Override
             public void onFailure(Throwable ex) {
@@ -47,8 +46,8 @@ public class KafkaMessageHelper {
             @Override
             public void onSuccess(SendResult<String, T> result) {
                 RecordMetadata metadata = result.getRecordMetadata();
-                log.info("Recieved successful response from Kafka dor order id: {}"
-                                + " Topic: {} Partition: {} Offset: {} Timestamp: {}",
+                log.info("Received successful response from Kafka for order id: {}" +
+                                " Topic: {} Partition: {} Offset: {} Timestamp: {}",
                         orderId,
                         metadata.topic(),
                         metadata.partition(),
