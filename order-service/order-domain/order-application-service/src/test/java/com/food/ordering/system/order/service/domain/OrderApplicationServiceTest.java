@@ -199,7 +199,7 @@ public class OrderApplicationServiceTest {
                .thenReturn(Optional.of(restaurantResponse));
        OrderDomainException orderDomainException = assertThrows(OrderDomainException.class,
                () -> orderApplicationService.createOrder(createOrderCommand));
-       assertEquals("Restaurant with id " + RESTAURANT_ID + " is currently not active!", orderDomainException.getMessage());
+       assertEquals("Restaurant with id " + RESTAURANT_ID + "is currently not active!", orderDomainException.getMessage());
     }
 
     private OrderPaymentOutboxMessage getOrderPaymentOutboxMessage() {
