@@ -20,6 +20,7 @@ com\food\ordering\system\order\service\domain\OrderApplicationServiceImpl.class
 com\food\ordering\system\order\service\domain\dto\message\RestaurantApprovalResponse.class
 com\food\ordering\system\order\service\domain\outbox\model\payment\OrderPaymentOutboxMessage.class
 com\food\ordering\system\order\service\domain\OrderPaymentSaga$1.class
+com\food\ordering\system\order\service\domain\ports\input\message\listener\customer\CustomerMessageListener.class
 com\food\ordering\system\order\service\domain\OrderPaymentSaga.class
 com\food\ordering\system\order\service\domain\ports\output\message\publisher\restaurantapproval\RestaurantApprovalRequestMessagePublisher.class
 com\food\ordering\system\order\service\domain\ports\output\repository\RestaurantRepository.class
@@ -34,6 +35,7 @@ com\food\ordering\system\order\service\domain\RestaurantApprovalResponseMessageL
 com\food\ordering\system\order\service\domain\OrderTrackCommandHandler.class
 com\food\ordering\system\order\service\domain\outbox\model\approval\OrderApprovalEventProduct.class
 com\food\ordering\system\order\service\domain\dto\message\RestaurantApprovalResponse$RestaurantApprovalResponseBuilder.class
+com\food\ordering\system\order\service\domain\CustomerMessageListenerImpl.class
 com\food\ordering\system\order\service\domain\OrderCreateHelper.class
 com\food\ordering\system\order\service\domain\outbox\model\payment\OrderPaymentEventPayload$OrderPaymentEventPayloadBuilder.class
 com\food\ordering\system\order\service\domain\dto\create\CreateOrderCommand$CreateOrderCommandBuilder.class
@@ -45,7 +47,9 @@ com\food\ordering\system\order\service\domain\ports\input\message\listener\payme
 com\food\ordering\system\order\service\domain\PaymentResponseMessageListenerImpl.class
 com\food\ordering\system\order\service\domain\OrderApprovalSaga.class
 com\food\ordering\system\order\service\domain\config\OrderServiceConfigData.class
+com\food\ordering\system\order\service\domain\dto\message\CustomerModel$CustomerModelBuilder.class
 com\food\ordering\system\order\service\domain\dto\create\CreateOrderCommand.class
+com\food\ordering\system\order\service\domain\dto\message\CustomerModel.class
 com\food\ordering\system\order\service\domain\ports\input\message\listener\restaurantapproval\RestaurantApprovalResponseMessageListener.class
 com\food\ordering\system\order\service\domain\dto\message\PaymentResponse$PaymentResponseBuilder.class
 com\food\ordering\system\order\service\domain\ports\output\repository\CustomerRepository.class

@@ -4,14 +4,12 @@ import com.food.ordering.system.domain.valueobject.*;
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderCommand;
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
 import com.food.ordering.system.order.service.domain.dto.create.OrderAddress;
+import com.food.ordering.system.order.service.domain.dto.message.CustomerModel;
 import com.food.ordering.system.order.service.domain.dto.track.TrackOrderResponse;
 import com.food.ordering.system.order.service.domain.outbox.model.approval.OrderApprovalEventPayload;
 import com.food.ordering.system.order.service.domain.outbox.model.approval.OrderApprovalEventProduct;
 import com.food.ordering.system.order.service.domain.outbox.model.payment.OrderPaymentEventPayload;
-import com.food.ordering.system.order.system.domain.entity.Order;
-import com.food.ordering.system.order.system.domain.entity.OrderItem;
-import com.food.ordering.system.order.system.domain.entity.Product;
-import com.food.ordering.system.order.system.domain.entity.Restaurant;
+import com.food.ordering.system.order.system.domain.entity.*;
 import com.food.ordering.system.order.system.domain.event.OrderCancelledEvent;
 import com.food.ordering.system.order.system.domain.event.OrderCreatedEvent;
 import com.food.ordering.system.order.system.domain.event.OrderPaidEvent;
@@ -84,6 +82,14 @@ public class OrderDataMapper {
                 .failureMessages(order.getFailureMessages())
                 .build();
     }
+
+    public Customer customerModelToCustomer(CustomerModel customerModel) {
+        return new Customer(new CustomerId(UUID.fromString(customerModel.getId())),
+                customerModel.getUsername(),
+                customerModel.getFirstName(),
+                customerModel.getLastName());
+    }
+
 
     private List<OrderItem> orderItemsToOrderItemEntities(List<com.food.ordering.system.order.service.domain.dto.create.OrderItem> orderItems) {
         return orderItems.stream()
