@@ -2,6 +2,7 @@ D:\Projects\Port\Java\food-ordering-system\food-ordering-system\infrastructure\k
 D:\Projects\Port\Java\food-ordering-system\food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\food\ordering\system\kafka\order\avro\model\PaymentRequestAvroModel.java
 D:\Projects\Port\Java\food-ordering-system\food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\food\ordering\system\kafka\order\avro\model\Product.java
 D:\Projects\Port\Java\food-ordering-system\food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\food\ordering\system\kafka\order\avro\model\RestaurantApprovalResponseAvroModel.java
+D:\Projects\Port\Java\food-ordering-system\food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\food\ordering\system\kafka\order\avro\model\CustomerAvroModel.java
 D:\Projects\Port\Java\food-ordering-system\food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\food\ordering\system\kafka\order\avro\model\PaymentResponseAvroModel.java
 D:\Projects\Port\Java\food-ordering-system\food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\food\ordering\system\kafka\order\avro\model\OrderApprovalStatus.java
 D:\Projects\Port\Java\food-ordering-system\food-ordering-system\infrastructure\kafka\kafka-model\src\main\java\com\food\ordering\system\kafka\order\avro\model\PaymentStatus.java
